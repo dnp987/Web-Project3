@@ -1,0 +1,36 @@
+doctype html
+html(lang="en")
+  head
+    style 
+      include ../test.css
+    title= 'Node.js Template'
+  body
+    h1 Test1 #{name}
+    h2= name
+    p(class='p_test') Test2 #{number}
+    p(class='p_test')= number
+    div(class='home-link')
+      a(href='http://localhost:5000') Home
+
+    form(action="test" method="GET" target="frame1")
+      p Test:
+        input(type="text" placeholder="test" name="testname")
+        br
+        input(type="submit")
+      br
+      
+    form(action="test2" method="POST" target="frame1")
+      p Test2: 
+        input(type="text" placeholder="test2" name="testname2")
+        br
+        input(type="submit")
+
+    iframe(class="frame1" name="frame1" width="500" height="400" title="frame1")
+    br
+    p Another spot...
+    embed(width="500" height="200" name="frame1")
+   
+    script. 
+      var name = "#{name}";
+      var num = #{number};
+      console.log(name, num);

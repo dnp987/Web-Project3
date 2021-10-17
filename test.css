@@ -1,0 +1,33 @@
+* {
+    font-family: 'Verdana';
+    color:red;
+    background: white;
+}
+
+h1 {
+    font-family: 'Arial';
+    text-align: center;
+}
+
+h2 {
+    font-family: 'Arial';
+    text-align: center;
+}
+
+p {
+    color:green;
+}
+
+.frame1 {
+    border: none;
+}
+
+.home-link{
+    font-family: 'Arial';
+    text-align: center;
+}
+
+.p_test {
+    font-family: 'Courier New';
+    color: black;
+}
