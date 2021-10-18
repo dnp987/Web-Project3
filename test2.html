@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Form Test</title>
+        <meta name = "description" content ="Test 1">
+        <link rel="icon" href="data:,">
+    </head>
+    <body>
+        <form name="form1" action="test" method="GET" target="frame1">
+            Name: <input type="text" name = "name"><br><br>
+            <input type="button" value="Send" onclick="submitform();"><br><br>
+        </form>
+        <iframe class="frame1" name="frame1" width="500" height="400" title="frame1"></iframe>
+    </body>
+    <script>
+        function submitform(){
+            document.form1.submit();
+            document.form1.reset();
+        }
+    </script>
