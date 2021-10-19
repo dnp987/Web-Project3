@@ -1,8 +1,10 @@
 doctype html
 html(lang="en")
   head
-    style 
+    style
       include ../test.css
+
+    link(rel="icon" href="data:,")
     title= 'Node.js Template'
   body
     h1 Test1 #{name}
@@ -12,18 +14,15 @@ html(lang="en")
     p(class='p_test') Test2 #{number}
     p(class='p_test')= number
 
-    form(action="test" method="GET" target="frame1")
+    form(name="form1" action="test" method="GET" target="frame1")
       p Test:
-        input(type="text" placeholder="test" name="testname")
-        br
-        input(type="submit")
-        br
-      
-    form(action="test2" method="POST" target="frame1")
-      p Test2: 
-        input(type="text" placeholder="test2" name="testname2")
-        br
-        input(type="submit")
+      input(type="text" placeholder="Enter some text" name="testname")
+      input(type="button" value="Send" onclick="submitform('form1');")
+    br
+    form(name="form2" action="test2" method="POST" target="frame1")
+        p Test2:
+        input(type="text" placeholder="Enter some other text" name="testname2")
+        input(type="button" value="Send" onclick="submitform('form2');")
 
     iframe(class="frame1" name="frame1" width="500" height="200" title="frame1")
     br
@@ -34,3 +33,9 @@ html(lang="en")
       var name = "#{name}";
       var num = #{number};
       console.log(name, num);
+
+      function submitform(f1){
+        console.log("form name: " + f1);
+        document.getElementsByName(f1)[0].submit();
+        document.getElementsByName(f1)[0].reset();
+      }

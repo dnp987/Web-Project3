@@ -10,13 +10,20 @@
     <body>
         <form name="form1" action="test" method="GET" target="frame1">
             Name: <input type="text" name = "name"><br><br>
-            <input type="button" value="Send" onclick="submitform();"><br><br>
+            <input type="button" value="Send" onclick="submitform('form1');"><br><br>
+        </form>
+        <form name="form2" action="test" method="GET" target="frame1">
+            Number: <input type="text" name = "name"><br><br>
+            <input type="button" value="Send" onclick="submitform('form2');"><br><br>
         </form>
         <iframe class="frame1" name="frame1" width="500" height="400" title="frame1"></iframe>
     </body>
     <script>
-        function submitform(){
-            document.form1.submit();
-            document.form1.reset();
+        function submitform(f1){
+            console.log("form name: " + f1);
+            //document.form1.submit();
+            document.getElementsByName(f1)[0].submit();
+            //document.form1.reset();
+            document.getElementsByName(f1)[0].reset();
         }
     </script>
