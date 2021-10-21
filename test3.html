@@ -2,14 +2,15 @@
 <html lang="en" dir="ltr">
   <head>
     <meta charset="utf-8">
-    <link rel="stylesheet" href="test.css" />
+    <link rel="icon" href="data:,">
+    <link rel="stylesheet" href="/test.css" />
     <title>fetch with node js test</title>
   </head>
   <body>
     <h1><%= name %></h1>
 
     <div id="test"></div>
-    <div id="test2"></div>
+    <p id="test2"></p>
 
     <script type="text/javascript">
         var url = "http://localhost:5000/test_api";
@@ -21,9 +22,9 @@
             var message = result.message;
             console.log(title, message);
             var div1 = document.getElementById('test');
-            var div2 = document.getElementById('test2');
+            var p = document.getElementById('test2');
             div1.innerHTML = title;
-            div2.innerHTML = message;
+            p.innerHTML = message;
         })
         .catch(error => console.log('error:', error));
     </script>
