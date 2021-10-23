@@ -8,14 +8,23 @@
   </head>
   <body>
     <h1><%= name %></h1>
-
     <div id="test"></div>
     <p id="test2"></p>
+    <input type ="button" onclick="test_get()" value="Test Get">
+    <input type ="button" onclick="test_post()" value="Test Post">
 
     <script type="text/javascript">
-        var url = "http://localhost:5000/test_api";
-        console.log(url);
-        fetch(url).then(response =>response.json())
+      function test_get() {
+        var url = "http://localhost:5000/test_get";
+        console.log("GET: ", url);
+        var test=123;
+        var test2=456;
+        str = `?test=${test}`;
+        str2 = `test2=${test2}`;
+        url = url + str + "&" + str2; 
+        //url = url + "?test=123&test2=456";
+        fetch(url, {method: 'GET'}).then(response =>response.json())
+        //fetch(url).then(response =>response.json())
         .then( (result) => {
             console.log('success: ', result)
             var title = result.title;
@@ -26,8 +35,47 @@
             div1.innerHTML = title;
             p.innerHTML = message;
         })
-        .catch(error => console.log('error:', error));
+        .catch(error => console.log('error:', error));        
+      }
     </script>
 
+    <script>
+      function test_post() {
+        var url = "http://localhost:5000/test_post";
+        console.log("POST: ", url);
+        var data = {"test":"123", "test2":"456"};
+        console.log(data);
+        fetch(url, {method: 'POST', headers:{'Content-Type':'application/json'}, body: JSON.stringify(data)}).then(response =>response.json())
+        .then( (result) => {
+            console.log('success: ', result)
+            var title = result.title;
+            var message = result.message;
+            console.log(title, message);
+            var div1 = document.getElementById('test');
+            var p = document.getElementById('test2');
+            div1.innerHTML = title;
+            p.innerHTML = message;
+        })
+        .catch(error => console.log('error:', error));        
+      }       
+    </script>
   </body>
 </html>
+<!--function test_put() {
+  var url = "http://localhost:5000/test_put";
+  console.log(url);
+  var data = {test: "123"};
+  fetch(url, {method: 'POST', headers:{'content-type':'application/json'},body: JSON,stringify()}).then(response =>response.json())
+  //fetch(url).then(response =>response.json())
+  .then( (result) => {
+    console.log('success: ', result)
+    var title = result.title;
+    var message = result.message;
+    console.log(title, message);
+    var div1 = document.getElementById('test');
+    var p = document.getElementById('test2');
+    div1.innerHTML = title;
+    p.innerHTML = message;
+  })
+  .catch(error => console.log('error:', error));        
+}-->
