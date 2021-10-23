@@ -43,7 +43,7 @@
       function test_post() {
         var url = "http://localhost:5000/test_post";
         console.log("POST: ", url);
-        var data = {"test":"123", "test2":"456"};
+        var data = {"test":"123", "test2":"456"}; //setup some test JSON data
         console.log(data);
         fetch(url, {method: 'POST', headers:{'Content-Type':'application/json'}, body: JSON.stringify(data)}).then(response =>response.json())
         .then( (result) => {
