@@ -10,15 +10,16 @@
     <h1><%= name %></h1>
     <div id="test">div placeholder</div>
     <p id="test2">p placeholder</p>
-    <input type ="button" onclick="test_get()" value="Test Get">
-    <input type ="button" onclick="test_post()" value="Test Post">
+    <input id = "btn1" type ="button" port=5000 onclick="test_get(5000)" value="Test Get">
+    <input type ="button" onclick="test_post(5000)" value="Test Post">
     <br>
     <br>
     <a href='http://localhost:5000'>Home</a> 
 
     <script type="text/javascript">
-      function test_get() {
-        var url = "http://localhost:5000/test_get";
+      function test_get(PORT) {
+        var data_port = document.getElementById("btn1").getAttribute('port');
+        var url = "http://localhost:" + data_port + "/test_get";
         console.log("GET: ", url);
         var test=123;
         var test2=456;
@@ -26,7 +27,6 @@
         str2 = `test2=${test2}`;
         url = url + str + "&" + str2; 
         fetch(url, {method: 'GET'}).then(response =>response.json())
-        //fetch(url).then(response =>response.json())
         .then( (result) => {
             console.log('success: ', result)
             var title = result.title;
@@ -39,11 +39,9 @@
         })
         .catch(error => console.log('error:', error));        
       }
-    </script>
 
-    <script>
-      function test_post() {
-        var url = "http://localhost:5000/test_post";
+      function test_post(PORT) {
+        var url = "http://localhost:" + PORT + "/test_post";
         console.log("POST: ", url);
         var data = {"test":"321", "test2":"654"}; //setup some test JSON data
         console.log(data);
