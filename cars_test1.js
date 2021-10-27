@@ -1,3 +1,4 @@
+// Use with cars_test1.html
 // Initialize App
 //const { resolveInclude } = require('ejs');
 const express = require('express');
@@ -18,14 +19,18 @@ var con = mysql.createConnection({
     database: "carsdb"
   });
 
-
 // Assign route
 app.get('/', (req, res) => {
+    res.render(__dirname + '/cars_test1.html');
+});
+
+// Assign route
+app.post('/car_data', (req, res) => {
 	//var car_data = ''; // start with no data, that way there's nothing left over from the previous request
-	//var low_price = req.body.low;
-	//var high_price = req.body.high;
+	var low_price = req.body.low;
+	var high_price = req.body.high;
 	//console.log(low_price, high_price);
-	con.query('select * from dealers',(err, result) => {
+	con.query('select year, make, model, price, stock_num, Name, Location, Phone, URL from dealers, prices where dealers.ID  = prices.dealer_id and price >' + low_price + ' and price <= ' + high_price + ' order by price asc;',(err, result) => {
   	if (err){
         console.log(err);      
         res.status(404).send("Database problems - unable to connect");

@@ -1,3 +1,4 @@
+// Use with index.pug, index2.pug
 // Initialize App
 const express = require('express');
 const app = express();

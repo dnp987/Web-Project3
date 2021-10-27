@@ -1,3 +1,4 @@
+// Use with test2.html
 // Initialize App
 const express = require('express');
 const app = express();

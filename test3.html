@@ -1,3 +1,4 @@
+<!-- Use with server.js -->
 <!DOCTYPE html>
 <html lang="en" dir="ltr">
   <head>
@@ -43,7 +44,7 @@
       function test_post(PORT) {
         var url = "http://localhost:" + PORT + "/test_post";
         console.log("POST: ", url);
-        var data = {"test":"321", "test2":"654"}; //setup some test JSON data
+        var data = {"test":321, "test2":"654"}; //setup some test JSON data
         console.log(data);
         fetch(url, {method: 'POST', headers:{'Content-Type':'application/json'}, body: JSON.stringify(data)}).then(response =>response.json())
         .then( (result) => {
