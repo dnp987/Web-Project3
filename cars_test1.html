@@ -9,36 +9,57 @@
   </head>
   <body>
     <h1>Cars Database test 1</h1>
-    <p>Number of cars:</p>
-    <div id="test"></div>
-    <br>
-    <div class = "row_test">
-    </div>
-    <input id = "btn1" type ="button" onclick="get_data(5000)" value="Get Data">
-    <br>
     <br>
     <a href='http://localhost:5000'>Home</a> 
-
+    <br>
+    <p id="test"></div>
+    <br>
+    <div id = "row_test"></div>
+    <br>
+    <br>
+    <label for="low">Low Price</label>
+    <input id = "low" type = "number" value=0 min=0 step="500" required>
+    <label for="high">High Price</label>
+    <input id = "high" type = "number" value=0 min=0 step="500" required>
+    <br>
+    <br>
+    <input id = "btn1" type ="button" onclick="get_data(5000)" value="Get Data">
     <script type="text/javascript">
       function get_data(PORT) {
         var url = "http://localhost:" + PORT + "/car_data";
         console.log("POST: ", url);
-        var data = {"low":5000, "high":7500}; //setup some test JSON data
+        var low = parseInt(document.getElementById("low").value);
+        var high = parseInt(document.getElementById("high").value);
+        var data = {"low":low, "high":high}; //setup some test JSON data
         console.log(data);
+
+        var row_test = document.getElementById('row_test');
+        row_test.innerHTML = ""; // Setup an empty div element
+
+        var p = document.getElementById('test');
+        if ( low >= high){
+          p.innerHTML = "High price must be greater than the low price"; 
+          return; 
+        }
+        if (isNaN(low)|| isNaN(high)) {
+          p.innerHTML = "You must enter numeric values only"; 
+          return;          
+        }
+
         fetch(url, {method: 'POST', headers:{'Content-Type':'application/json'}, body: JSON.stringify(data)}).then(response =>response.json())
         .then( (result) => {
             console.log('success: ', result);
             var res_length = result.length;
-            var div1 = document.getElementById('test');
-            div1.innerHTML = res_length;
 
-            var row_test = document.getElementsByClassName('row_test')[0];
+            if (result.length > 0){
+              p.innerHTML = res_length + " cars " + " priced between $" + low + " and $" + high;
+            }
+            else {
+              p.innerHTML = "There are no cars found between " + low + " and " + high;
+            }
+
             var row_test2 = document.getElementsByClassName('row_test2');
             console.log("Before: " + row_test2.length);
-            if (row_test2.length > 0){
-              console.log("more than zero");
-              //row_test.remove();   
-            }
             for (var i = 0; i < res_length; i++){
               var year = result[i].year, make = result[i].make, 
                 model = result[i].model, 
@@ -51,7 +72,7 @@
 
               var row = document.createElement("div"); 
               row.classList.add('row_test2');
-              row.innerHTML = i + " Year: " + year + " Make: " + make + " Model: " + model + " Price: " + price + " Stock #: " + stock + " Dealer: " + name + " Location: " + location + "URL: " + url;
+              row.innerHTML = (i+1) + " Year: " + year + " Make: " + make + " Model: " + model + " Price: $" + price + " Stock #: " + stock + " Dealer: " + name + " Location: " + location + " URL: " + url;
               row_test.append(row);
             }
             console.log("After: " + row_test2.length);
