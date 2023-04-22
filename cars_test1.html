@@ -8,7 +8,7 @@
     <title>Cars database test</title>
   </head>
   <body>
-    <h1>Cars Database test 1</h1>
+    <h1>Toronto Used Cars</h1>
     <br>
     <a href='http://localhost:5000'>Home</a> 
     <br>
@@ -72,7 +72,7 @@
 
               var row = document.createElement("div"); 
               row.classList.add('row_test2');
-              row.innerHTML = (i+1) + " Year: " + year + " Make: " + make + " Model: " + model + " Price: $" + price + " Stock #: " + stock + " Dealer: " + name + " Location: " + location + " URL: " + url;
+              row.innerHTML = (i+1) + "  Year: " + year + " Make: " + make + " Model: " + model + " Price: $" + price + " Stock #: " + stock + " Dealer: " + name + " Location: " + location + " URL: " + url;
               row_test.append(row);
             }
             console.log("After: " + row_test2.length);
