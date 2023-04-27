@@ -1,0 +1,76 @@
+<!-- Use with cars_test1.js copied from test3.html -->
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+  <head>
+    <title>
+      Sample code - Traversing an HTML Table with JavaScript and DOM Interfaces
+    </title>
+    <link rel="stylesheet" href="./tabletest.css" />
+     <style>
+
+
+ 	</style>
+ </head>
+ <body>
+ 
+
+  <div class = 'table1'>
+  <table >  
+<thead>
+		<tr><th>Year</th><th>Make</th><th>Model</th><th>Price</th><th>Stock#</th><th>Dealer</th><th>Location</th><th>URL</th></tr> 
+</thead>
+ 	<tbody>
+	 	<tr><td>2023</td><td>Ford</td><td>Taurus</td><td>25000</td><td>ABC123</td><td>Uptown Ford</td><td>Toronto</td><td>www.ford.ca</td></tr>  
+	 	<tr><td>2010</td><td>Ford</td><td>Taurus</td><td>25000</td><td>ABC123</td><td>Uptown Ford</td><td>Toronto</td><td>www.ford.ca</td></tr>  
+		<tr><td>2010</td><td>Ford</td><td>Taurus</td><td>25000</td><td>ABC123</td><td>Uptown Ford</td><td>Toronto</td><td>www.ford.ca</td></tr>  
+		<tr><td>2010</td><td>Ford</td><td>Taurus</td><td>25000</td><td>ABC123</td><td>Uptown Ford</td><td>Toronto</td><td>www.ford.ca</td></tr> 
+		<tr><td>2023</td><td>Ford</td><td>Taurus</td><td>25000</td><td>ABC123</td><td>Uptown Ford</td><td>Toronto</td><td>www.ford.ca</td></tr>  
+		<tr><td>2010</td><td>Ford</td><td>Taurus</td><td>25000</td><td>ABC123</td><td>Uptown Ford</td><td>Toronto</td><td>www.ford.ca</td></tr>  
+		<tr><td>2010</td><td>Ford</td><td>Taurus</td><td>25000</td><td>ABC123</td><td>Uptown Ford</td><td>Toronto</td><td>www.ford.ca</td></tr>  
+		<tr><td>2010</td><td>Ford</td><td>Taurus</td><td>25000</td><td>ABC123</td><td>Uptown Ford</td><td>Toronto</td><td>www.ford.ca</td></tr>  
+		<tr><td>2023</td><td>Ford</td><td>Taurus</td><td>25000</td><td>ABC123</td><td>Uptown Ford</td><td>Toronto</td><td>www.ford.ca</td></tr>  
+		<tr><td>2010</td><td>Ford</td><td>Taurus</td><td>25000</td><td>ABC123</td><td>Uptown Ford</td><td>Toronto</td><td>www.ford.ca</td></tr>  
+		<tr><td>2010</td><td>Ford</td><td>Taurus</td><td>25000</td><td>ABC123</td><td>Uptown Ford</td><td>Toronto</td><td>www.ford.ca</td></tr>  
+		<tr><td>2010</td><td>Ford</td><td>Taurus</td><td>25000</td><td>ABC123</td><td>Uptown Ford</td><td>Toronto</td><td>www.ford.ca</td></tr> 
+		<tr><td>2023</td><td>Ford</td><td>Taurus</td><td>25000</td><td>ABC123</td><td>Uptown Ford</td><td>Toronto</td><td>www.ford.ca</td></tr>  
+		<tr><td>2010</td><td>Ford</td><td>Taurus</td><td>25000</td><td>ABC123</td><td>Uptown Ford</td><td>Toronto</td><td>www.ford.ca</td></tr>  
+		<tr><td>2010</td><td>Ford</td><td>Taurus</td><td>25000</td><td>ABC123</td><td>Uptown Ford</td><td>Toronto</td><td>www.ford.ca</td></tr>  
+		<tr><td>2010</td><td>Ford</td><td>Taurus</td><td>25000</td><td>ABC123</td><td>Uptown Ford</td><td>Toronto</td><td>www.ford.ca</td></tr> 
+		<tr><td>2023</td><td>Ford</td><td>Taurus</td><td>25000</td><td>ABC123</td><td>Uptown Ford</td><td>Toronto</td><td>www.ford.ca</td></tr>  
+		<tr><td>2010</td><td>Ford</td><td>Taurus</td><td>25000</td><td>ABC123</td><td>Uptown Ford</td><td>Toronto</td><td>www.ford.ca</td></tr>  
+		<tr><td>2010</td><td>Ford</td><td>Taurus</td><td>25000</td><td>ABC123</td><td>Uptown Ford</td><td>Toronto</td><td>www.ford.ca</td></tr>  
+		<tr><td>2010</td><td>Ford</td><td>Taurus</td><td>25000</td><td>ABC123</td><td>Uptown Ford</td><td>Toronto</td><td>www.ford.ca</td></tr>  
+		<tr><td>2023</td><td>Ford</td><td>Taurus</td><td>25000</td><td>ABC123</td><td>Uptown Ford</td><td>Toronto</td><td>www.ford.ca</td></tr>  
+		<tr><td>2010</td><td>Ford</td><td>Taurus</td><td>25000</td><td>ABC123</td><td>Uptown Ford</td><td>Toronto</td><td>www.ford.ca</td></tr>  
+		<tr><td>2010</td><td>Ford</td><td>Taurus</td><td>25000</td><td>ABC123</td><td>Uptown Ford</td><td>Toronto</td><td>www.ford.ca</td></tr>  
+		<tr><td>2010</td><td>Ford</td><td>Taurus</td><td>25000</td><td>ABC123</td><td>Uptown Ford</td><td>Toronto</td><td>www.ford.ca</td></tr> 
+		<tr><td>2023</td><td>Ford</td><td>Taurus</td><td>25000</td><td>ABC123</td><td>Uptown Ford</td><td>Toronto</td><td>www.ford.ca</td></tr>  
+		<tr><td>2010</td><td>Ford</td><td>Taurus</td><td>25000</td><td>ABC123</td><td>Uptown Ford</td><td>Toronto</td><td>www.ford.ca</td></tr>  
+		<tr><td>2010</td><td>Ford</td><td>Taurus</td><td>25000</td><td>ABC123</td><td>Uptown Ford</td><td>Toronto</td><td>www.ford.ca</td></tr>  
+		<tr><td>2010</td><td>Ford</td><td>Taurus</td><td>25000</td><td>ABC123</td><td>Uptown Ford</td><td>Toronto</td><td>www.ford.ca</td></tr> 
+		<tr><td>2023</td><td>Ford</td><td>Taurus</td><td>25000</td><td>ABC123</td><td>Uptown Ford</td><td>Toronto</td><td>www.ford.ca</td></tr>  
+		<tr><td>2010</td><td>Ford</td><td>Taurus</td><td>25000</td><td>ABC123</td><td>Uptown Ford</td><td>Toronto</td><td>www.ford.ca</td></tr>  
+		<tr><td>2010</td><td>Ford</td><td>Taurus</td><td>25000</td><td>ABC123</td><td>Uptown Ford</td><td>Toronto</td><td>www.ford.ca</td></tr>  
+		<tr><td>2010</td><td>Ford</td><td>Taurus</td><td>25000</td><td>ABC123</td><td>Uptown Ford</td><td>Toronto</td><td>www.ford.ca</td></tr>  
+		<tr><td>2023</td><td>Ford</td><td>Taurus</td><td>25000</td><td>ABC123</td><td>Uptown Ford</td><td>Toronto</td><td>www.ford.ca</td></tr>  
+		<tr><td>2010</td><td>Ford</td><td>Taurus</td><td>25000</td><td>ABC123</td><td>Uptown Ford</td><td>Toronto</td><td>www.ford.ca</td></tr>  
+		<tr><td>2010</td><td>Ford</td><td>Taurus</td><td>25000</td><td>ABC123</td><td>Uptown Ford</td><td>Toronto</td><td>www.ford.ca</td></tr>  
+		<tr><td>2010</td><td>Ford</td><td>Taurus</td><td>25000</td><td>ABC123</td><td>Uptown Ford</td><td>Toronto</td><td>www.ford.ca</td></tr> 
+		<tr><td>2023</td><td>Ford</td><td>Taurus</td><td>25000</td><td>ABC123</td><td>Uptown Ford</td><td>Toronto</td><td>www.ford.ca</td></tr>  
+		<tr><td>2010</td><td>Ford</td><td>Taurus</td><td>25000</td><td>ABC123</td><td>Uptown Ford</td><td>Toronto</td><td>www.ford.ca</td></tr>  
+		<tr><td>2010</td><td>Ford</td><td>Taurus</td><td>25000</td><td>ABC123</td><td>Uptown Ford</td><td>Toronto</td><td>www.ford.ca</td></tr>  
+		<tr><td>2010</td><td>Ford</td><td>Taurus</td><td>25000</td><td>ABC123</td><td>Uptown Ford</td><td>Toronto</td><td>www.ford.ca</td></tr> 
+		<tr><td>2023</td><td>Ford</td><td>Taurus</td><td>25000</td><td>ABC123</td><td>Uptown Ford</td><td>Toronto</td><td>www.ford.ca</td></tr>  
+		<tr><td>2010</td><td>Ford</td><td>Taurus</td><td>25000</td><td>ABC123</td><td>Uptown Ford</td><td>Toronto</td><td>www.ford.ca</td></tr>  
+		<tr><td>2010</td><td>Ford</td><td>Taurus</td><td>25000</td><td>ABC123</td><td>Uptown Ford</td><td>Toronto</td><td>www.ford.ca</td></tr>  
+		<tr><td>2010</td><td>Ford</td><td>Taurus</td><td>25000</td><td>ABC123</td><td>Uptown Ford</td><td>Toronto</td><td>www.ford.ca</td></tr>  
+		<tr><td>2023</td><td>Ford</td><td>Taurus</td><td>25000</td><td>ABC123</td><td>Uptown Ford</td><td>Toronto</td><td>www.ford.ca</td></tr>  
+		<tr><td>2010</td><td>Ford</td><td>Taurus</td><td>25000</td><td>ABC123</td><td>Uptown Ford</td><td>Toronto</td><td>www.ford.ca</td></tr>  
+		<tr><td>2010</td><td>Ford</td><td>Taurus</td><td>25000</td><td>ABC123</td><td>Uptown Ford</td><td>Toronto</td><td>www.ford.ca</td></tr>  
+		<tr><td>2010</td><td>Ford</td><td>Taurus</td><td>25000</td><td>ABC123</td><td>Uptown Ford</td><td>Toronto</td><td>www.ford.ca</td></tr>   
+		</tbody>
+</table> 
+</div>  
+</body>
+</html>
+  
