@@ -1,0 +1,61 @@
+.table {
+    border-collapse: collapse;
+    width: 100%;
+}
+.table td {
+    font-size: 12px;
+    padding: 10px 10px;
+    overflow: hidden;
+    /*word-break: normal;*/
+    color: #333;
+    border-left: 1px solid #ccc;
+    border-right: 1px solid #ccc;
+    border-bottom: 1px solid #ccc;
+    background-color: #FFFFFF;
+    font-family:"Arial";
+    text-align: center;
+ }
+.table th {
+    font-weight: bold;
+    font-family:"Arial";
+    text-align: center;
+    font-size: 14px;
+    border: 1px solid #ccc;
+    border-bottom: 2px solid #ccc;
+    padding: 10px 20px;
+    /*word-break: normal;*/
+    color: #333;
+    background-color: #F0F0F0;
+}
+.tablealign {
+    /*float: right;*/
+   padding-left: 2%;
+    /*padding-right: 10%;*/
+    width: 50%;
+    /*height: 400px;*/
+    height: auto;
+    border-radius: 3px;
+    padding-bottom: 50px;
+}
+tbody {
+    overflow-y: scroll;
+    /*overflow-x: hidden;*/
+    overflow-y: scroll;
+    height: 500px;
+    display: block;
+}
+.table tfoot {
+	font-weight: bold;
+}
+
+thead {
+    display:table;
+    width: calc(100% - 17px);
+    table-layout:fixed;
+}
+
+tbody tr {
+    table-layout: fixed;
+    display:table;
+    width:100%;
+}

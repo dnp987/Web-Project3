@@ -1,0 +1,43 @@
+<!-- Use with cars_test1.js copied from test3.html -->
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+  <head>
+    <title>
+      Table Test
+    </title>
+    <link rel="stylesheet" href="./test6.css" />
+ </head>
+ <body>
+<div>
+    <div class="tablealign">
+        <table class ="table" id="table">
+        <thead>
+		<tr><th>Year</th><th>Make</th><th>Model</th><th>Price</th><th>Stock#</th><th>Dealer</th><th>Location</th><th>URL</th></tr> 
+		</thead>
+            <tbody class = "tbody">
+            </tbody>
+            <tfoot>
+            	<tr>
+            		<td>This is a test table footer</td>
+            	</tr>
+            	</tfoot>
+        </table>
+    </div>
+</div>
+
+ <script type="text/javascript">
+var table_test = document.getElementsByClassName("tbody")[0];
+var row_num  = 125;
+var cell_num = 8;
+for (var i=0; i<row_num; i++){
+	var row = document.createElement("tr");
+	for (var j=0; j<cell_num; j++){
+		var cell = document.createElement("td");
+		cell.innerHTML =i + "ABCDEFGHIJKLMNOPQRSTUVWXYZ" + j;
+		row.appendChild(cell);
+	}
+	table_test.appendChild(row);
+}
+</script>
+</body>
+ </html>

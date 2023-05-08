@@ -1,0 +1,61 @@
+@charset "ISO-8859-1";
+
+html, body {
+	padding-left: 2em;
+	font-family: Georgia, Arial, serif, "Comic Sans MS";
+	background-color: black;
+	background-repeat: no-repeat;
+	background-size: cover;
+	background-attachment: fixed; 
+}
+
+* {
+    background-image: url('../images/gta.jpg');
+    font-family: 'Verdana';
+}
+
+h1 {
+    font-family: 'Arial';
+    text-align: center;
+    color:red;
+}
+
+h2 {
+    font-family: 'Arial';
+    text-align: center;
+    color:red;
+}
+
+label {
+	color: red;
+}
+
+.high, .low {
+	color: red;
+}
+
+.button {
+	color: red;	
+}
+
+.home-link{
+    font-family: 'Arial';
+    color:red;
+}
+
+#test {
+    font-family: 'Courier New';
+    color: yellow;
+}
+
+tbody {
+	 font-size:  12px;
+	 color: yellow;
+}
+thead{
+		 color: yellow;
+}
+
+a {
+	color: yellow;
+}
