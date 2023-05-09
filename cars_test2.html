@@ -14,12 +14,14 @@
     <br>
     <div><p id="test"></div>
     <br>
-   <table class = "table1">
-        <thead class = "thead">
-		</thead>
-         <tbody class = "tbody">
-	     </tbody>
-     </table>
+   <div class="tablealign">
+	   <table class = "table1">
+	        <thead class = "thead">
+			</thead>
+	         <tbody class = "tbody">
+		     </tbody>
+	     </table>
+</div>
 
     <br>
     <label for="low">Low Price</label>
@@ -28,12 +30,10 @@
     <input id = "high"class = "high" type = "number" value=0 min=0 step="500" required>
     <br>
     <br>
-    <input id = "btn1" type ="button"  class = "button" onclick="get_data(5000)" value="Get Data">
+    <input id = "btn1" type ="button"  class = "button" onclick="get_data(5000)" value=" Find your Cars! ">
     
     <script type="text/javascript">
-    
       function get_data(PORT) {
-     	
     	var url = "http://localhost:" + PORT + "/car_data";
         console.log("POST: ", url);
         var low = parseInt(document.getElementById("low").value);
@@ -69,6 +69,13 @@
             }
    
             var table_test = document.getElementsByClassName("tbody")[0];
+            var tbody_length = table_test.rows.length;
+            if (tbody_length > 0){  /*clean up the table, remove prior data before refreshing */
+             	for (var i= 0; i< tbody_length; i++) {
+            		table_test.deleteRow(-1); /* -1 removes the last row */
+            	}
+             }
+            
             for (var i = 0; i < res_length; i++){
               var year = result[i].year, make = result[i].make, 
                 model = result[i].model, 
@@ -80,7 +87,6 @@
                 url = result[i].URL;
 
               	var row = document.createElement("tr");
-              	
               	var cell = document.createElement("td");
               	cell.innerHTML = year;
               	row.appendChild(cell);
@@ -112,11 +118,14 @@
               	var cell = document.createElement("td");
               	var link = document.createElement("a");
               	link.setAttribute('href', url);
+              	link.setAttribute('target', "_blank");
               	link.innerHTML = url
               	cell.appendChild(link);
               	row.appendChild(cell);
               	
               	table_test.appendChild(row);
+              	/*var cur_date = new Date();
+              	document.getElementsByClassName('tfoot')[0].innerHTML=("Data is accurate as of " + cur_date); */
             }
         })
         .catch(error => console.log('error:', error));        

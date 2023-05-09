@@ -3,7 +3,7 @@
 html, body {
 	padding-left: 2em;
 	font-family: Georgia, Arial, serif, "Comic Sans MS";
-	background-color: black;
+	/*background-color: black;*/
 	background-repeat: no-repeat;
 	background-size: cover;
 	background-attachment: fixed; 
@@ -27,7 +27,7 @@ h2 {
 }
 
 label {
-	color: red;
+	color: yellow;
 }
 
 .high, .low {
@@ -35,6 +35,8 @@ label {
 }
 
 .button {
+	font-family: 'Arial';
+	font-size: 16px;
 	color: red;	
 }
 
@@ -48,12 +50,41 @@ label {
     color: yellow;
 }
 
+.tablealign {
+    /*float: right;*/
+   /*padding-left: 2%;
+    /*padding-right: 10%;*/
+    /*width: 50%;*/
+    /*height: 400px;*/
+    height: auto;
+    /*border-radius: 3px;*/
+    /*padding-bottom: 50px;*/
+}
+
 tbody {
 	 font-size:  12px;
 	 color: yellow;
+	 overflow-y: scroll;
+    /*overflow-x: hidden;*/
+    height: auto;
+ }
+
+tr, td {
+	text-align: left;
 }
+
 thead{
+		 text-align: left;
+		 font-size:  12px;
+		 font-weight: bold;
 		 color: yellow;
+		 display: table-header-group;
+}
+
+.tfoot {
+	font-size: 10px;
+	text-align: Center;
+	color: yellow;
 }
 
 a {
