@@ -4,7 +4,7 @@
   <head>
     <meta charset="utf-8">
     <link rel="icon" href="data:,">
-    <link rel="stylesheet" href="./cars.css" />
+    <link rel="stylesheet" href="./cars2.css" />
     <title>Cars database test</title>
   </head>
   <body>
@@ -12,7 +12,7 @@
     <br>
     <a href='http://localhost:5000' class = "home-link">Home</a> 
     <br>
-    <div><p id="test"></div>
+    <div><p id="status"></div>
     <br>
    <div class="tablealign">
 	   <table class = "table1">
@@ -24,10 +24,10 @@
 </div>
 
     <br>
-    <label for="low">Low Price</label>
-    <input id = "low" class = "low" type = "number" value=0 min=0 step="500" required>
-    <label for="high">High Price</label>
-    <input id = "high"class = "high" type = "number" value=0 min=0 step="500" required>
+    <label for="low" >Low Price</label>
+    <input id = "low" class = "low" type = "number"  value=0 min=0 step="500" required>
+    <label for="high" >High Price</label>
+    <input id = "high"class = "high" type = "number"  value=0 min=0 step="500" required>
     <br>
     <br>
     <input id = "btn1" type ="button"  class = "button" onclick="get_data(5000)" value=" Find your Cars! ">
@@ -41,7 +41,7 @@
         var data = {"low":low, "high":high}; //setup some test JSON data
         console.log(data);
        var table_test = document.getElementsByClassName("tbody")[0];
-       var p = document.getElementById('test');
+       var p = document.getElementById('status');
         if ( low >= high){
           p.innerHTML = "High price must be greater than the low price"; 
           return; 
@@ -64,7 +64,8 @@
             }
             
             var tbl_header = document.getElementsByClassName("thead")[0];
-            if (tbl_header.rows.length == 0) {
+            /*if (tbl_header.rows.length == 0) {*/
+            if (tbl_header.children.length == 0) {
                 display_header(); /* load the headers once the search data has been verified and only if they've never loaded before*/
             }
    
@@ -134,14 +135,16 @@
       function display_header(){
       	var header = document.getElementsByClassName("thead")[0];
   		var header_list = ["Year","Make", "Model", "Price", "Stock #", "Dealer", "Location", "URL"];
-  		var row = document.createElement("tr");
+  		/*var row = document.createElement("tr");*/
   		header_list.forEach(load_header);
   		function load_header(value, index, array) {
-          	var cell = document.createElement("td");
+          	/*var cell = document.createElement("td");*/
+          	var cell = document.createElement("th");
           	cell.innerHTML = value;
-          	row.appendChild(cell);
+          	/*row.appendChild(cell);*/
+          	header.append(cell);
          }
-      	header.appendChild(row);
+      	/*header.appendChild(row);*/
   		}
  
       </script>
