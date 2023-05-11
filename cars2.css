@@ -2,6 +2,7 @@
 
 html, body {
 	padding-left: 2px;
+	padding-right: 2px;
 	background-repeat: no-repeat;
 	background-size: cover;
 	background-attachment: fixed; 
@@ -19,14 +20,22 @@ h1 {
 
 label {
 	color: yellow;
+	font-family: 'Arial';
+	font-size: 16px;
+	padding: 4px;
+	border-radius: 20px;
 }
 
 .high, .low {
 	color: red;
 	border-radius: 20px;
+	font-family: 'Arial';
+	font-size: 14px;
+	padding: 4px;
 }
 
 .button {
+	padding: 4px;
 	font-family: 'Arial';
 	font-size: 16px;
 	color: red;	
@@ -35,6 +44,7 @@ label {
 
 .home-link{
     font-family: 'Arial';
+    font-size: 14px;
     color:red;
 }
 
@@ -55,6 +65,8 @@ th {
     border: 2px solid yellow;
     background: yellow;
     color: black;
+    font-family: 'Arial';
+	font-size: 14px;
 }
 
 td {
@@ -62,6 +74,8 @@ td {
     padding-right: 4px;
     border: 1px solid grey;
     color: yellow;
+    font-family: 'Arial';
+	font-size: 12px;
 }
 
 thead {
@@ -85,4 +99,6 @@ tbody thead th {
 
 a {
 	color: yellow;
+	font-family: 'Arial';
+	font-size: 12px;
 }
