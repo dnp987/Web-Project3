@@ -47,13 +47,12 @@ label {
 table {
     width: 100%;
     border-collapse: collapse;
-    background: grey;
 }
 
 th {
     padding: 2px;
     text-align: left;
-    border: 2px solid black;
+    border: 2px solid yellow;
     background: yellow;
     color: black;
 }
@@ -69,6 +68,7 @@ thead {
     position:sticky;
     top: 0;
     left: 0;
+    border: 2px solid yellow;
    }
 
 .tablealign {
