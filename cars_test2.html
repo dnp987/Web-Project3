@@ -118,11 +118,16 @@
               	
               	var cell = document.createElement("td");
               	var link = document.createElement("a");
-              	link.setAttribute('href', url);
+              	var img = document.createElement("img")
+              	/* link.setAttribute('href', url);
               	link.setAttribute('target', "_blank");
+              	link.innerHTML = url; */
+              	link.href = url;
+              	link.target = "_blank";
               	//link.innerHTML = url;
-              	link.innerHTML = "Car Details";
-              	cell.appendChild(link);
+              	img.src = "..images/small_car.jpg";
+              	link.appendChild(img);
+               	cell.appendChild(link);
               	row.appendChild(cell);
               	
               	table_test.appendChild(row);
@@ -135,7 +140,7 @@
       
       function display_header(){
       	var header = document.getElementsByClassName("thead")[0];
-  		var header_list = ["Year","Make", "Model", "Price", "Stock #", "Dealer", "Location", "URL"];
+  		var header_list = ["Year","Make", "Model", "Price", "Stock #", "Dealer", "Location", "Car Details"];
   		/*var row = document.createElement("tr");*/
   		header_list.forEach(load_header);
   		function load_header(value, index, array) {
