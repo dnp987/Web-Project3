@@ -54,9 +54,17 @@ label {
     text-align: center;
 }
 
+.tablealign {
+    overflow-y: auto;
+    height: 600px;
+    width: 700px;
+    background:transparent;
+}
+
 table {
-    width: 100%;
     border-collapse: collapse;
+    table-layout: fixed;	
+    background:transparent;
 }
 
 th {
@@ -76,6 +84,7 @@ td {
     color: yellow;
     font-family: 'Arial';
 	font-size: 12px;
+	width: auto;
 }
 
 thead {
@@ -84,12 +93,6 @@ thead {
     left: 0;
     border: 2px solid yellow;
    }
-
-.tablealign {
-    overflow-y: auto;
-    height: 600px;
-    background:transparent;
-}
 
 tbody thead th {
     display: block;
@@ -102,4 +105,3 @@ a {
 	font-size: 12px;
 	background:transparent;
 }
-
