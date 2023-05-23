@@ -1,0 +1,166 @@
+@charset "ISO-8859-1";
+
+html, body {
+	padding-left: 2px;
+	padding-right: 2px;
+	background-repeat: no-repeat;
+	background-size: cover;
+	background-attachment: fixed; 
+}
+
+* {
+    background-image: url('../images/gta.jpg');
+}
+
+h1 {
+    font-family: 'Arial';
+    text-align: center;
+    color:red;
+}
+
+label {
+	color: yellow;
+	font-family: 'Arial';
+	font-size: 16px;
+	padding: 4px;
+	border-radius: 20px;
+}
+
+.high, .low {
+	color: red;
+	border-radius: 20px;
+	font-family: 'Arial';
+	font-size: 14px;
+	padding: 4px;
+}
+
+.button {
+	padding: 4px;
+	font-family: 'Arial';
+	font-size: 16px;
+	color: red;	
+	border-radius: 10px;
+}
+
+.home-link{
+    font-family: 'Arial';
+    font-size: 14px;
+    color:red;
+}
+
+#status {
+    font-family: 'Courier New';
+    color: yellow;
+    text-align: center;
+}
+
+.tablealign {
+    overflow-y: auto;
+    min-height: 600px;
+    min-width: 700px;
+    background:transparent;
+}
+
+table {
+    border-collapse: collapse;
+    table-layout: fixed;	
+    background:transparent;
+}
+
+th {
+    padding: 2px;
+    text-align: left;
+    border: 2px solid yellow;
+    background: yellow;
+    color: black;
+    font-family: 'Arial';
+	font-size: 14px;
+}
+
+td {
+    padding-left: 4px; 
+    padding-right: 4px;
+    border: 1px solid grey;
+    color: yellow;
+    font-family: 'Arial';
+	font-size: 12px;
+	width: auto;
+}
+
+thead {
+    position:sticky;
+    top: 0;
+    left: 0;
+    border: 2px solid yellow;
+   }
+
+tbody thead th {
+    display: block;
+    overflow: auto;
+    color: yellow;
+}
+a {
+	color: yellow;
+	font-family: 'Arial';
+	font-size: 12px;
+	background:transparent;
+}
+
+.p_class{
+    font-family: Arial;
+    color: yellow;
+    font-size: 16px;
+    font-weight: bold;
+    background-color: lightgreen;
+    border-radius: 10px;
+    padding: 1px;
+    top: 147px;
+ }
+
+  #p1 { /* year */
+    position: absolute;
+    left: 35px;
+    border: 2px solid red;
+  }
+
+  #p2 { /* Make */
+    position: absolute;
+    left: 105px;
+    border: 2px solid red;
+  }
+
+  #p3 { /* Model */
+    position: absolute;
+    left: 175px;
+    border: 2px solid red;
+  }
+
+  #p4 { /* Price */
+    position: absolute;
+    left: 250px;
+    border: 2px solid red;
+  }
+
+  #p5 { /* Stock */
+    position: absolute;
+    left: 320px;
+    border: 2px solid red;
+  }
+
+  #p6 { /* Dealer */
+    position: absolute;
+    left: 392px;
+    border: 2px solid red;
+  }
+
+  #p7 { /* Location */
+    position: absolute;
+    left: 462px;
+    border: 2px solid red;
+  }
+
+  #p8 { /* Description */
+    position: absolute;
+    left: 540px;
+    border: 2px solid red;
+  }
