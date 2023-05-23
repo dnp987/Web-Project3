@@ -9,13 +9,15 @@ html, body {
 }
 
 * {
-    background-image: url('../images/gta.jpg');
+    /*background-image: url('../images/gta.jpg');*/
+    background-image: url('../images/Toronto-skyline-500x258.jpg');
 }
 
 h1 {
     font-family: 'Arial';
     text-align: center;
     color:red;
+    background:transparent;
 }
 
 label {
@@ -51,19 +53,24 @@ label {
 #status {
     font-family: 'Courier New';
     color: yellow;
-    text-align: center;
-}
-
-.tablealign {
-    overflow-y: auto;
-    height: 600px;
-    width: 700px;
+    text-align: left;
     background:transparent;
 }
 
-table {
+.tablealign {
+	overflow-y: auto;
+	height: 500px;
+    width: auto;
+    background:transparent;
+    scrollbar-width: none; /* Firefox */
+}
+
+.tablealign::-webkit-scrollbar{
+	display:none; /* Chrome, Safari, Opera */
+}
+
+.table1 {
     border-collapse: collapse;
-    table-layout: fixed;	
     background:transparent;
 }
 
@@ -75,6 +82,7 @@ th {
     color: black;
     font-family: 'Arial';
 	font-size: 14px;
+	width: fit-content;
 }
 
 td {
@@ -84,7 +92,7 @@ td {
     color: yellow;
     font-family: 'Arial';
 	font-size: 12px;
-	width: auto;
+	width: fit-content;
 }
 
 thead {

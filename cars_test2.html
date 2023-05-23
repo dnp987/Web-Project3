@@ -11,8 +11,8 @@
     <h1>Toronto Used Cars</h1>
     <br>
     <a href='http://localhost:5000' class = "home-link">Home</a> 
-    <br>
-    <div><p id="status"></div>
+    <br><br>
+    <div id="status"></div>
     <br>
   <div class="tablealign">
 	   <table class = "table1">
@@ -57,7 +57,7 @@
             var res_length = result.length;
 
             if (result.length > 0){
-              p.innerHTML = res_length + " cars " + " priced between $" + low + " and $" + high;
+              p.innerHTML = res_length + " cars " + " priced between $" + low + " and $" + high + " (scrollable) ";
             }
             else {
               p.innerHTML = "There are no cars found between " + low + " and " + high;
