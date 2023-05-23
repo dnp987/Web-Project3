@@ -41,13 +41,16 @@
         var data = {"low":low, "high":high}; //setup some test JSON data
         console.log(data);
        var table_test = document.getElementsByClassName("tbody")[0];
-       var p = document.getElementById('status');
+       var status = document.getElementById('status');
         if ( low >= high){
-          p.innerHTML = "High price must be greater than the low price"; 
+        	status.innerHTML = "-- High price must be greater than the low price  --";
+        	status.style.fontSize = "18px";
+        	status.style.fontWeight = "bold";
           return; 
         }
         if (isNaN(low)|| isNaN(high)) {
-          p.innerHTML = "Enter numeric values only"; 
+          status.innerHTML = "Enter numeric values only"; 
+      	  status.style.fontWeight = "bold";
           return;          
         }
 
@@ -57,10 +60,10 @@
             var res_length = result.length;
 
             if (result.length > 0){
-              p.innerHTML = res_length + " cars " + " priced between $" + low + " and $" + high + " (scrollable) ";
+              status.innerHTML = res_length + " cars " + " priced between $" + low + " and $" + high + " (scrollable) ";
             }
             else {
-              p.innerHTML = "There are no cars found between " + low + " and " + high;
+            	status.innerHTML = "There are no cars found between " + low + " and " + high;
             }
             
             var tbl_header = document.getElementsByClassName("thead")[0];

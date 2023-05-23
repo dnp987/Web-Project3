@@ -9,8 +9,8 @@ html, body {
 }
 
 * {
-    /*background-image: url('../images/gta.jpg');*/
-    background-image: url('../images/Toronto-skyline-500x258.jpg');
+   /*background-image: url('../images/gta.jpg');*/
+   background-image: url('../images/Toronto-skyline-500x258.jpg');
 }
 
 h1 {
@@ -51,7 +51,7 @@ label {
 }
 
 #status {
-    font-family: 'Courier New';
+    font-family: 'Arial';
     color: yellow;
     text-align: left;
     background:transparent;
