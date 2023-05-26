@@ -8,10 +8,7 @@
     <title>Cars database test</title>
   </head>
   <body>
-    <h1>Toronto Used Cars</h1>
-    <br>
-    <a href='http://localhost:5000' class = "home-link">Home</a> 
-    <br><br>
+    <p><a href='http://localhost:5000' class = "home-link">Toronto Used Cars</a></p> 
     <div id="status"></div>
     <br>
   <div class="tablealign">
@@ -25,12 +22,12 @@
 
     <br>
     <label for="low" >Low Price</label>
-    <input id = "low" class = "low" type = "number"  value=0 min=0 step="500" required>
+    <input id = "low" type = "number"  value=0 min=0 step="500" required>
     <label for="high" >High Price</label>
-    <input id = "high"class = "high" type = "number"  value=0 min=0 step="500" required>
-    <br>
-    <br>
-    <input id = "btn1" type ="button"  class = "button" onclick="get_data(5000)" value=" Find your Cars! ">
+    <input id = "high" type = "number"  value=0 min=0 step="500" required>
+    <input id = "btn1" type ="button" onclick="get_data(5000)" value=" Find your Cars! ">
+    
+    <footer>All prices are as of </footer>
     
     <script type="text/javascript">
       function get_data(PORT) {
@@ -46,7 +43,7 @@
         	status.innerHTML = "-- High price must be greater than the low price  --";
         	status.style.fontSize = "18px";
         	status.style.fontWeight = "bold";
-          return; 
+            return; 
         }
         if (isNaN(low)|| isNaN(high)) {
           status.innerHTML = "Enter numeric values only"; 
@@ -60,10 +57,11 @@
             var res_length = result.length;
 
             if (result.length > 0){
-              status.innerHTML = res_length + " cars " + " priced between $" + low + " and $" + high + " (scrollable) ";
+              status.innerHTML = res_length + " cars " + " priced between $" + low + " and $" + high + " found (scrollable) ";
             }
             else {
-            	status.innerHTML = "There are no cars found between " + low + " and " + high;
+            	status.innerHTML = "There are no cars found between " + low + " and " + high + " ,try again! ";
+            	return;
             }
             
             var tbl_header = document.getElementsByClassName("thead")[0];

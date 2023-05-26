@@ -1,8 +1,8 @@
 @charset "ISO-8859-1";
 
 html, body {
-	padding-left: 2px;
-	padding-right: 2px;
+	padding-left: 100px;
+	padding-right: 10px;
 	background-repeat: no-repeat;
 	background-size: cover;
 	background-attachment: fixed; 
@@ -13,45 +13,53 @@ html, body {
    background-image: url('../images/Toronto-skyline-500x258.jpg');
 }
 
-h1 {
+p {
     font-family: 'Arial';
-    text-align: center;
+    padding-left: 250px;
+    font-size: 32px;
+	font-weight: bold;
+    /*text-align: center;*/
     color:red;
     background:transparent;
 }
 
 label {
-	color: yellow;
+	color: red;
 	font-family: 'Arial';
 	font-size: 16px;
-	padding: 4px;
+	font-weight: bold;
+	padding: 6px;
+	border: 1px solid yellow;
 	border-radius: 20px;
 }
 
-.high, .low {
+#high, #low {
 	color: red;
 	border-radius: 20px;
 	font-family: 'Arial';
-	font-size: 14px;
-	padding: 4px;
+	font-size: 16px;
+	padding: 6px;
+	border: 1px solid yellow;
+	max-width: 100px;
 }
 
-.button {
-	padding: 4px;
+#btn1 {
 	font-family: 'Arial';
-	font-size: 16px;
+	font-size: 22px;
 	color: red;	
 	border-radius: 10px;
+	border: 1px solid yellow;
+	margin-left: 100px;
 }
 
 .home-link{
     font-family: 'Arial';
-    font-size: 14px;
     color:red;
 }
 
 #status {
     font-family: 'Arial';
+    font-size: 20px;
     color: yellow;
     text-align: left;
     background:transparent;
@@ -60,7 +68,7 @@ label {
 .tablealign {
 	overflow-y: auto;
 	height: 500px;
-    width: auto;
+    width: 1000px;
     background:transparent;
     scrollbar-width: none; /* Firefox */
 }
@@ -81,7 +89,7 @@ th {
     background: yellow;
     color: black;
     font-family: 'Arial';
-	font-size: 14px;
+	font-size: 16px;
 	width: fit-content;
 }
 
@@ -91,7 +99,7 @@ td {
     border: 1px solid grey;
     color: yellow;
     font-family: 'Arial';
-	font-size: 12px;
+	font-size: 14px;
 	width: fit-content;
 }
 
@@ -108,8 +116,16 @@ tbody thead th {
     color: yellow;
 }
 a {
-	color: yellow;
-	font-family: 'Arial';
-	font-size: 12px;
 	background:transparent;
+	text-decoration: none;
 }
+
+footer {
+    position: fixed;
+    bottom: 0px;
+    width: 100%;
+    font: 10px Arial;
+    color: yello;
+    text-align: center;
+}
+
