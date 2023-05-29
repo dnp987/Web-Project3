@@ -1,0 +1,33 @@
+<!-- Use with cars_test2.js  -->
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+  <head>
+    <meta charset="utf-8">
+    <link rel="icon" href="data:,">
+    <link rel="stylesheet" href="./cars2.css" />
+    <title>Cars database test</title>
+  </head>
+  <body>
+    <script type="text/javascript" src = "../scripts/scripts.js"></script>
+    <p><a href='http://localhost:5000' class = "home-link">Toronto Used Cars</a></p> 
+    <div id="status"></div>
+    <br>
+  <div class="tablealign">
+	   <table class = "table1">
+	        <thead class = "thead">
+			</thead>
+	         <tbody class = "tbody">
+		     </tbody>
+	     </table>
+</div>
+
+    <br>
+    <label for="low" >Low Price</label>
+    <input id = "low" type = "number"  value=0 min=0 step="500" required>
+    <label for="high" >High Price</label>
+    <input id = "high" type = "number"  value=0 min=0 step="500" required>
+    <input id = "btn1" type ="button" onclick="get_data(5000)" value=" Find your Cars! ">
+    
+    <footer class = "tfoot"></footer>
+      </body>
+    </html>

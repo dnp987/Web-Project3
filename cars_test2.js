@@ -21,7 +21,7 @@ var con = mysql.createConnection({
 
 // Assign route
 app.get('/', (req, res) => {
-    res.render(__dirname + '/cars_test2.html');
+    res.render(__dirname + '/cars_test3.html');
 });
 
 // Assign route

@@ -49,7 +49,7 @@ label {
 	color: red;	
 	border-radius: 10px;
 	border: 1px solid yellow;
-	margin-left: 100px;
+	margin-left: 50px;
 }
 
 .home-link{
@@ -120,12 +120,12 @@ a {
 	text-decoration: none;
 }
 
-footer {
+.tfoot {
     position: fixed;
     bottom: 0px;
     width: 100%;
-    font: 10px Arial;
-    color: yello;
-    text-align: center;
+    font: 12px Arial;
+    color: yellow;
+    text-align: left;
 }
 
