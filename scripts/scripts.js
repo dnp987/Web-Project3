@@ -118,7 +118,7 @@ function get_data(PORT) {
 	function display_footer(){
 		let cur_date = new Date();
         let footer = document.getElementsByClassName('tfoot')[0]
-        const disclaimer = " @ DNP Enterprises Inc."
+        const disclaimer = " © DNP Enterprises Inc."
         footer.innerHTML=("Data is accurate as of " + cur_date + disclaimer);
     }
     
