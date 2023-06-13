@@ -1,7 +1,8 @@
 // Use with cars_test3.html. Created to work with Pandas db files
 // Initialize App
 //const { resolveInclude } = require('ejs');
-var dataForge = require('data-forge');
+const  dataForge = require('data-forge');
+require('data-forge-fs');
 const express = require('express');
 const app = express();
 
@@ -12,10 +13,6 @@ app.use(express.json());
 app.engine('html', require('ejs').renderFile);
 app.set('view engine', 'html');
 
-var dataFrame = dataForge.readFileSynch('C:/Users/dpenn/Desktop/Cars/prices.csv')
-	.parseCSV()
-;
-
 // Assign route
 app.get('/', (req, res) => {
     res.render(__dirname + '/cars_test3.html');
@@ -23,10 +20,16 @@ app.get('/', (req, res) => {
 
 // Assign route
 app.post('/car_data', (req, res) => {
-	//var car_data = ''; // start with no data, that way there's nothing left over from the previous request
 	var low_price = req.body.low;
 	var high_price = req.body.high;
 	//console.log(low_price, high_price);
+	const df = dataForge.readFileSync('C:/Users/dpenn/Desktop/Cars/prices.csv').parseCSV();
+	const columnNames = df.getColumnNames();
+	console.log(columnNames);
+	console.log(df.count());
+	console.log(df.head(5).toString());
+	console.log(df.getSeries('ID').toString());
+	/*
 	con.query('select year, make, model, price, stock_num, Name, Location, Phone, URL from dealers, prices where dealers.ID  = prices.dealer_id and price >' + low_price + ' and price <= ' + high_price + ' order by price asc;',(err, result) => {
   	if (err){
         console.log(err);      
@@ -38,7 +41,7 @@ app.post('/car_data', (req, res) => {
         res.send(result);
   		res.end();
     	}
-    });
+    });*/
 });
 
 // Start server
