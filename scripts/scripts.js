@@ -1,4 +1,4 @@
-// Use with cars_test2/3.html and cars2.css
+// Use with cars_test2or cars_test3.html and cars2.css
 function get_data(PORT) {
     	let url = "http://localhost:" + PORT + "/car_data";
         console.log("POST: ", url);
@@ -49,7 +49,6 @@ function get_data(PORT) {
 	    	}
 		header_list.forEach(load_header);
 		function load_header(value) {
-	  	let cell = document.createElement("th");
 	  	cell.innerHTML = value;
 	  	header.append(cell);
 	 	}
