@@ -49,6 +49,7 @@ function get_data(PORT) {
 	    	}
 		header_list.forEach(load_header);
 		function load_header(value) {
+	  	let cell = document.createElement("th");
 	  	cell.innerHTML = value;
 	  	header.append(cell);
 	 	}
