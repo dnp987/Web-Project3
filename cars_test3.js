@@ -22,13 +22,32 @@ app.get('/', (req, res) => {
 app.post('/car_data', (req, res) => {
 	var low_price = req.body.low;
 	var high_price = req.body.high;
-	//console.log(low_price, high_price);
-	const df = dataForge.readFileSync('C:/Users/dpenn/Desktop/Cars/prices.csv').parseCSV();
-	const columnNames = df.getColumnNames();
-	console.log(columnNames);
-	console.log(df.count());
-	console.log(df.head(5).toString());
-	console.log(df.getSeries('ID').toString());
+	console.log(low_price, high_price);
+	
+	const prices = dataForge.readFileSync('C:/Users/dpenn/Desktop/Cars/prices.csv').parseCSV();
+	const dealers = dataForge.readFileSync('C:/Users/dpenn/Desktop/Cars/dealers.csv').parseCSV();
+	let raw_prices = prices.where((row) => row.Price > low_price && row.Price <= high_price );
+	
+	
+	
+	const temp = prices.join(
+		dealers,
+		(left) => left.ID, 
+		(right) => right.ID,
+		(left, right) => {
+			return {ID: left.ID, dealers:left.Make, Address:right.Address};
+		}
+	)
+	console.log(prices.getColumnNames());
+	console.log(dealers.getColumnNames());
+	console.log(raw_prices.toJSON());
+	console.log(raw_prices.count());
+	//console.log(temp.toString());
+	result = raw_prices
+    res.send(result);
+  	res.end();
+	//console.log(prices.head(5).toString());
+	//console.log(prices.getSeries('ID').toString());
 	/*
 	con.query('select year, make, model, price, stock_num, Name, Location, Phone, URL from dealers, prices where dealers.ID  = prices.dealer_id and price >' + low_price + ' and price <= ' + high_price + ' order by price asc;',(err, result) => {
   	if (err){

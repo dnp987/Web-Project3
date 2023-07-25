@@ -36,8 +36,8 @@ app.post('/car_data', (req, res) => {
         res.status(404).send("Database problems - unable to connect");
         }
     else{
-//    	console.log(result.length);
-//      console.log(result);
+    	console.log(result.length);
+        console.log(result);
         res.send(result);
   		res.end();
     	}
